@@ -50,8 +50,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "emffl",
-        "USER": os.getenv("DATABASE_USERNAME", "emffl"),
-        "PASSWORD": os.getenv("DATABASE_PASSWORD", "emffl"),
+        "USER": os.getenv("POSTGRES_USER", "emffl"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "emffl"),
         "HOST": "postgres",
         "PORT": "5432",
     }
@@ -91,6 +91,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "django_htmx",
 ]
 
 LOCAL_APPS = [
@@ -151,6 +152,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 # STATIC
