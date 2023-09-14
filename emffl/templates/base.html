@@ -1,6 +1,7 @@
 {% load static i18n compress %}
 {% load django_htmx %}
 {% load static %}
+{% load tailwind_cli %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
@@ -26,6 +27,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer" />
       <!-- Your stuff: Third-party CSS libraries go here -->
+      {% tailwind_css %}
       <!-- This file stores project-specific CSS -->
       {% compress css %}
         <link href="{% static 'css/project.css' %}" rel="stylesheet" />
